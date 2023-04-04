@@ -11,7 +11,7 @@ public class StudentEnumerator : IEnumerator<Student>
     public StudentEnumerator(StudentCollection students)
     {
         _students = students;
-        _currentIndex = 0;
+        _currentIndex = -1;
         _currentStudent = default(Student);
     }
     
