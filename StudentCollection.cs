@@ -58,6 +58,20 @@ public class StudentCollection : ICollection<Student>
         return found;
     }
 
+    public bool Contains(Student? item, EqualityComparer<Student> comparer)
+    {
+        bool found = false;
+        foreach (var student in innerCol)
+        {
+            if (comparer.Equals(student, item))
+            {
+                found = true;
+            }
+        }
+
+        return found;
+    }
+
     public void CopyTo(Student[] array, int arrayIndex)
     {
         if (array == null)
