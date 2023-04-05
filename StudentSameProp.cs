@@ -14,6 +14,7 @@ public class StudentSameProp : EqualityComparer<Student>
 
     public override int GetHashCode(Student obj)
     {
-        throw new NotImplementedException();
+        var hash = obj.ID ^ obj.Grade ^ obj.Total;
+        return hash.GetHashCode();
     }
 }

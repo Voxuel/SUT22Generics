@@ -17,7 +17,7 @@ public class StudentEnumerator : IEnumerator<Student>
     
     public bool MoveNext()
     {
-        if (_currentIndex >= _students.Count)
+        if (++_currentIndex >= _students.Count)
         {
             return false;
         }
@@ -46,6 +46,5 @@ public class StudentEnumerator : IEnumerator<Student>
 
     public void Dispose()
     {
-        throw new NotImplementedException();
     }
 }

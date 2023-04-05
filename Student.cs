@@ -15,6 +15,21 @@ public class Student : IEquatable<Student>
 
     public bool Equals(Student? other)
     {
-        throw new NotImplementedException();
+        if (new StudentSameProp().Equals(this,other))
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    public override bool Equals(object? obj)
+    {
+        return base.Equals(obj);
+    }
+
+    public override int GetHashCode()
+    {
+        return base.GetHashCode();
     }
 }
